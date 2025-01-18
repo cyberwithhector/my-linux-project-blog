@@ -22,7 +22,7 @@ sudo groupadd IT
 sudo groupadd HR
 sudo groupadd Finance
 sudo groupadd Cybersecurity
-
+```
 
 
 
@@ -30,4 +30,25 @@ sudo groupadd Cybersecurity
 ![Screenshot of creating groups](https://github.com/cyberwithhector/my-linux-project-blog/blob/main/Screen%20Shot%202025-01-17%20at%2011.41.19%20PM.png)
 
 
+## Step 2: Create User Accounts
 
+Next, I created user accounts for the employees. **Admins** (Goku and Vegeta) will have full access to everything, while **regular users** (Piccolo and Bulma) will only have access to their department's directories.
+
+### Linux Commands:
+```bash
+# Create Admin Users (Goku and Vegeta)
+sudo useradd -m -G sudo goku
+sudo useradd -m -G sudo vegeta
+
+# Create Regular Users (Piccolo and Bulma)
+sudo useradd -m piccolo
+sudo useradd -m bulma
+
+# Assign Users to Their Department Groups
+sudo usermod -aG IT piccolo     # Piccolo is part of IT
+sudo usermod -aG HR bulma       # Bulma is part of HR
+```
+
+![Screenshot of creating groups](https://github.com/cyberwithhector/my-linux-project-blog/blob/main/Screen%20Shot%202025-01-17%20at%2011.55.37%20PM.png)
+
+![Screenshot of creating groups](https://github.com/cyberwithhector/my-linux-project-blog/blob/main/Screen%20Shot%202025-01-18%20at%2012.51.19%20AM.png)
