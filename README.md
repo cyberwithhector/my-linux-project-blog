@@ -24,10 +24,10 @@ sudo groupadd Finance
 sudo groupadd Cybersecurity
 ```
 
-
-
-
 ![Screenshot of creating groups](https://github.com/cyberwithhector/my-linux-project-blog/blob/main/Screen%20Shot%202025-01-17%20at%2011.41.19%20PM.png)
+
+
+
 
 
 ## Step 2: Create User Accounts
@@ -52,3 +52,51 @@ sudo usermod -aG HR bulma       # Bulma is part of HR
 ![Screenshot of creating groups](https://github.com/cyberwithhector/my-linux-project-blog/blob/main/Screen%20Shot%202025-01-17%20at%2011.55.37%20PM.png)
 
 ![Screenshot of creating groups](https://github.com/cyberwithhector/my-linux-project-blog/blob/main/Screen%20Shot%202025-01-18%20at%2012.51.19%20AM.png)
+
+
+
+
+
+## Step 3: Set Up Directory Structure for Departments
+
+Now it’s time to create the directory structure that will represent each department in the office. This will allow us to organize the data in a way that reflects real-world access control.
+
+### Linux Commands:
+```bash
+# Create the main directory for the company and subdirectories for each department
+sudo mkdir -p /company/IT
+sudo mkdir -p /company/HR
+sudo mkdir -p /company/Finance
+sudo mkdir -p /company/Cybersecurity
+```
+
+![Screenshot of creating groups](https://github.com/cyberwithhector/my-linux-project-blog/blob/main/Screen%20Shot%202025-01-17%20at%2011.57.56%20PM.png)
+
+
+
+
+
+## Step 4: Set Directory Ownership and Permissions
+
+To ensure that the right users have access to the right directories, we need to set the correct ownership and permissions.
+
+### Linux Commands:
+```bash
+# Set Group Ownership for Directories
+sudo chown :IT /company/IT
+sudo chown :HR /company/HR
+sudo chown :Finance /company/Finance
+sudo chown :Cybersecurity /company/Cybersecurity
+
+# Set Permissions for Directories
+sudo chmod 770 /company/IT         # IT group (Goku, Vegeta, Piccolo) can read, write, execute
+sudo chmod 770 /company/HR         # HR group (Goku, Vegeta, Bulma) can read, write, execute
+sudo chmod 770 /company/Finance    # Finance group (Goku, Vegeta) can read, write, execute
+sudo chmod 770 /company/Cybersecurity # Cybersecurity group (Goku, Vegeta) can read, write, execute
+```
+
+
+![Screenshot of creating groups](https://github.com/cyberwithhector/my-linux-project-blog/blob/main/Screen%20Shot%202025-01-18%20at%2012.37.05%20AM.png)
+
+![Screenshot of creating groups](https://github.com/cyberwithhector/my-linux-project-blog/blob/main/Screen%20Shot%202025-01-18%20at%203.28.29%20AM.png)
+
