@@ -14,12 +14,20 @@ Honestly, I wanted something practical to get started with Linux—something tha
 
 In an office, you’ve got different teams working on different stuff, so I figured it would make sense to organize the users into departments. I made four departments for this project: **IT**, **HR**, **Finance**, and **Cybersecurity**. Each department gets its own group.
 
+
+
 ### Linux Commands:
 ```bash
 sudo groupadd IT
 sudo groupadd HR
 sudo groupadd Finance
 sudo groupadd Cybersecurity
+
+
+
+
+
+![Screenshot of creating groups](https://github.com/cyberwithhector/my-linux-project-blog/blob/main/Screen%20Shot%202025-01-17%20at%2011.41.19%20PM.png)
 
 
 
