@@ -100,3 +100,34 @@ sudo chmod 770 /company/Cybersecurity # Cybersecurity group (Goku, Vegeta) can r
 
 ![Screenshot of creating groups](https://github.com/cyberwithhector/my-linux-project-blog/blob/main/Screen%20Shot%202025-01-18%20at%203.28.29%20AM.png)
 
+
+
+
+
+
+
+## Step 5: Test User Access
+
+Let’s make sure everything works as expected. I’ll log in as each user and test whether they can access the right directories. Admins (Goku and Vegeta) should have full access to all directories, while regular users (Piccolo and Bulma) should only have access to their respective department’s directories.
+
+### Linux Commands:
+```bash
+# Log in as Piccolo (a regular user in the IT department)
+su - piccolo
+ls /company/IT       # Piccolo should have access to IT
+ls /company/HR       # Piccolo should not have access to HR
+ls /company/Finance  # Piccolo should not have access to Finance
+ls /company/Cybersecurity  # Piccolo should not have access to Cybersecurity
+
+# Log in as Bulma (a regular user in the HR department)
+su - bulma
+ls /company/HR       # Bulma should have access to HR
+ls /company/IT       # Bulma should not have access to IT
+ls /company/Finance  # Bulma should not have access to Finance
+ls /company/Cybersecurity  # Bulma should not have access to Cybersecurity
+```
+
+
+![Screenshot of creating groups](https://github.com/cyberwithhector/my-linux-project-blog/blob/main/Screen%20Shot%202025-01-18%20at%2012.52.43%20AM.png)
+
+![Screenshot of creating groups](https://github.com/cyberwithhector/my-linux-project-blog/blob/main/Screen%20Shot%202025-01-18%20at%2012.55.01%20AM.png)
