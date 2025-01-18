@@ -131,3 +131,60 @@ ls /company/Cybersecurity  # Bulma should not have access to Cybersecurity
 ![Screenshot of creating groups](https://github.com/cyberwithhector/my-linux-project-blog/blob/main/Screen%20Shot%202025-01-18%20at%2012.52.43%20AM.png)
 
 ![Screenshot of creating groups](https://github.com/cyberwithhector/my-linux-project-blog/blob/main/Screen%20Shot%202025-01-18%20at%2012.55.01%20AM.png)
+
+
+
+
+
+
+
+## Step 6: Optional Enhancements
+
+Here are two optional enhancements to improve the setup: a **shared directory** for everyone and **logging** to track access attempts.
+
+### 1. Create a Shared Directory
+To create a directory that all users can access (read-only for regular users, but admins can modify), we can set up a shared directory.
+
+#### Linux Commands:
+```bash
+# Create a Shared Directory
+sudo mkdir /company/shared
+
+# Set Permissions: Read-only for others (755)
+sudo chmod 755 /company/shared
+```
+
+### 2. Enable Logging with auditd
+Logging is crucial for tracking access to sensitive data. I set up logging to monitor changes to the HR directory using the auditd tool.
+
+
+#### Linux Commands:
+```bash
+# Install auditd (if not already installed)
+sudo apt install auditd
+
+# Enable Logging for the HR Directory
+sudo auditctl -w /company/HR -p rwxa -k HR_access
+
+# Explanation of Flags:
+# -w: Watch the directory (/company/HR)
+# -p: Permissions to monitor (r=read, w=write, x=execute, a=attribute changes)
+# -k: Custom key for identifying logs (HR_access)
+
+# View Logs for HR Access Attempts
+sudo ausearch -k HR_access
+```
+
+
+## Conclusion
+This project was a fantastic introduction to Linux administration, giving me hands-on experience with creating and managing users, groups, directories, and permissions. Setting up a mock office environment not only helped me understand real-world IT practices but also brought me one step closer to my ultimate goal of working in cybersecurity, DevOps, or cloud computing.
+
+Key Takeaways:
+Groups: Using groups makes it easy to manage and control access across departments.
+Permissions: Setting the right permissions ensures data security and limits unauthorized access.
+Admins vs. Regular Users: Admins can manage the system, while regular users are limited to their assigned areas.
+Optional Enhancements: Shared directories and logging are great additions to make your setup more secure and collaborative.
+Even though I’m still figuring out where my career path will take me, this project has been a great way to practice and grow. I’m excited to keep learning, building more projects, and tackling new challenges.
+
+
+
